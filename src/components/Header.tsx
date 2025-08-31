@@ -21,12 +21,14 @@ export const Header = () => {
             <div className="relative hidden md:block">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search videos and summaries..."
-                className="pl-10 w-80 bg-muted/50 border-border"
+                placeholder="Search videos..."
+                className="pl-10 w-60 bg-muted/50 border-border"
               />
             </div>
-            <Button variant="ghost" size="icon">
-              <Settings className="h-5 w-5" />
+            <Button variant="ghost" size="icon" asChild>
+              <a href="/config">
+                <Settings className="h-5 w-5" />
+              </a>
             </Button>
           </div>
         </div>
