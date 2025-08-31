@@ -2,60 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* YouTube Content Manager Design System */
+/* Elite YouTube Content Manager Design System */
 
 @layer base {
   :root {
-    /* Background & Surface Colors */
-    --background: 210 11% 3%;
-    --foreground: 0 0% 98%;
-    --card: 210 11% 6%;
-    --card-foreground: 0 0% 95%;
-    --popover: 210 11% 5%;
-    --popover-foreground: 0 0% 95%;
+    /* Sophisticated Background & Surface Colors */
+    --background: 210 15% 2%;
+    --foreground: 0 0% 99%;
+    --card: 210 15% 4%;
+    --card-foreground: 0 0% 97%;
+    --popover: 210 15% 3%;
+    --popover-foreground: 0 0% 97%;
     
-    /* YouTube Brand Colors */
-    --youtube-red: 0 100% 50%;
-    --youtube-red-dark: 0 100% 45%;
-    --youtube-orange: 25 100% 55%;
+    /* Premium YouTube Brand Colors */
+    --youtube-red: 0 100% 52%;
+    --youtube-red-dark: 0 100% 47%;
+    --youtube-red-light: 0 100% 58%;
+    --youtube-orange: 25 100% 56%;
+    --youtube-orange-light: 25 100% 62%;
     
-    /* Theme Colors */
-    --primary: 0 100% 50%; /* YouTube Red */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 11% 11%;
-    --secondary-foreground: 0 0% 85%;
-    --muted: 210 11% 8%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 25 100% 55%; /* Orange accent */
-    --accent-foreground: 0 0% 98%;
+    /* Elite Theme Colors */
+    --primary: 0 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 8%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 210 15% 6%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 25 100% 56%;
+    --accent-foreground: 0 0% 100%;
     
-    /* Status Colors */
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
-    --warning: 48 96% 53%;
-    --warning-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    /* Refined Status Colors */
+    --success: 142 80% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 48 98% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 88% 62%;
+    --destructive-foreground: 0 0% 100%;
     
-    /* Interactive Elements */
-    --border: 210 11% 15%;
-    --input: 210 11% 10%;
-    --ring: 0 100% 50%;
-    --radius: 0.75rem;
+    /* Premium Interactive Elements */
+    --border: 210 15% 12%;
+    --input: 210 15% 7%;
+    --ring: 0 100% 52%;
+    --radius: 0.875rem;
     
-    /* Custom Gradients */
+    /* Ultra-Premium Gradients */
     --gradient-youtube: linear-gradient(135deg, hsl(var(--youtube-red)), hsl(var(--youtube-orange)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 11% 8%));
-    --gradient-processing: linear-gradient(90deg, hsl(var(--youtube-red) / 0.1), hsl(var(--youtube-orange) / 0.1));
+    --gradient-youtube-subtle: linear-gradient(135deg, hsl(var(--youtube-red) / 0.8), hsl(var(--youtube-orange) / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(210 15% 6%));
+    --gradient-card-hover: linear-gradient(145deg, hsl(210 15% 5%), hsl(210 15% 7%));
+    --gradient-processing: linear-gradient(90deg, hsl(var(--youtube-red) / 0.15), hsl(var(--youtube-orange) / 0.15));
+    --gradient-mesh: radial-gradient(ellipse 1000px 800px at 10% 40%, hsl(var(--youtube-red) / 0.05), transparent),
+                     radial-gradient(ellipse 1000px 600px at 80% 10%, hsl(var(--youtube-orange) / 0.05), transparent),
+                     radial-gradient(ellipse 800px 600px at 40% 80%, hsl(210 15% 8% / 0.3), transparent);
     
-    /* Shadows */
-    --shadow-youtube: 0 10px 40px -10px hsl(var(--youtube-red) / 0.3);
-    --shadow-card: 0 4px 20px -2px hsl(210 11% 1% / 0.3);
-    --shadow-glow: 0 0 30px hsl(var(--youtube-red) / 0.2);
+    /* Elite Shadow System */
+    --shadow-youtube: 0 12px 50px -12px hsl(var(--youtube-red) / 0.4);
+    --shadow-youtube-lg: 0 20px 80px -20px hsl(var(--youtube-red) / 0.5);
+    --shadow-card: 0 6px 30px -6px hsl(210 15% 1% / 0.4);
+    --shadow-card-hover: 0 12px 60px -12px hsl(210 15% 1% / 0.6);
+    --shadow-glow: 0 0 40px hsl(var(--youtube-red) / 0.3);
+    --shadow-glow-intense: 0 0 60px hsl(var(--youtube-red) / 0.5);
+    --shadow-inset: inset 0 1px 3px hsl(210 15% 1% / 0.3);
     
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Sophisticated Animation Curves */
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elegant: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 
@@ -65,56 +78,195 @@
   }
   
   body {
-    @apply bg-background text-foreground font-medium;
-    background-image: radial-gradient(circle at 20% 50%, hsl(var(--youtube-red) / 0.03) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, hsl(var(--youtube-orange) / 0.03) 0%, transparent 50%);
+    @apply bg-background text-foreground font-medium antialiased;
+    background: var(--gradient-mesh);
+    min-height: 100vh;
+  }
+  
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
   }
 }
 
 @layer components {
+  /* Elite Gradient Classes */
   .gradient-youtube {
     background: var(--gradient-youtube);
+  }
+  
+  .gradient-youtube-subtle {
+    background: var(--gradient-youtube-subtle);
   }
   
   .gradient-card {
     background: var(--gradient-card);
   }
   
+  .gradient-card-hover {
+    background: var(--gradient-card-hover);
+  }
+  
   .gradient-processing {
     background: var(--gradient-processing);
   }
   
+  /* Elite Shadow System */
   .shadow-youtube {
     box-shadow: var(--shadow-youtube);
+  }
+  
+  .shadow-youtube-lg {
+    box-shadow: var(--shadow-youtube-lg);
   }
   
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
   
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
   
+  .shadow-glow-intense {
+    box-shadow: var(--shadow-glow-intense);
+  }
+  
+  .shadow-inset {
+    box-shadow: var(--shadow-inset);
+  }
+  
+  /* Elite Interactive Elements */
+  .elite-card {
+    @apply gradient-card shadow-card border border-border/50 backdrop-blur-sm;
+    transition: var(--transition-elegant);
+  }
+  
+  .elite-card:hover {
+    @apply gradient-card-hover shadow-card-hover scale-[1.02] -translate-y-1;
+    border-color: hsl(var(--border) / 0.8);
+  }
+  
+  .elite-button {
+    @apply gradient-youtube shadow-youtube text-white border-0 font-semibold;
+    transition: var(--transition-spring);
+  }
+  
+  .elite-button:hover {
+    @apply shadow-glow-intense scale-105;
+    background: linear-gradient(135deg, hsl(var(--youtube-red-light)), hsl(var(--youtube-orange-light)));
+  }
+  
+  .elite-button:active {
+    @apply scale-95;
+  }
+  
+  .elite-input {
+    @apply bg-input/50 border-border/50 backdrop-blur-sm shadow-inset;
+    transition: var(--transition-smooth);
+  }
+  
+  .elite-input:focus {
+    @apply border-primary/50 shadow-glow ring-primary/20;
+  }
+  
+  /* Premium Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
   .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite alternate;
+    animation: pulse-glow 3s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.5s var(--transition-spring);
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s var(--transition-elegant);
+  }
+  
+  /* Elite Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(-5px) rotate(-1deg); }
   }
   
   @keyframes pulse-glow {
     from {
-      box-shadow: 0 0 20px hsl(var(--youtube-red) / 0.3);
+      box-shadow: 0 0 25px hsl(var(--youtube-red) / 0.4);
     }
     to {
-      box-shadow: 0 0 40px hsl(var(--youtube-red) / 0.6);
+      box-shadow: 0 0 50px hsl(var(--youtube-red) / 0.8);
     }
   }
   
-  .video-card-hover {
-    transition: var(--transition-spring);
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
-  .video-card-hover:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: var(--shadow-youtube);
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Loading State Animations */
+  .loading-shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted)) 0%, 
+      hsl(var(--muted-foreground) / 0.1) 50%, 
+      hsl(var(--muted)) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Micro-interactions */
+  .micro-bounce:hover {
+    animation: micro-bounce 0.3s ease;
+  }
+  
+  @keyframes micro-bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
   }
 }
