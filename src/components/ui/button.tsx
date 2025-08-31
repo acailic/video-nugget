@@ -18,6 +18,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        youtube: "gradient-youtube text-white shadow-youtube hover:shadow-glow transition-all duration-300",
+        processing: "gradient-processing text-foreground border border-youtube-red/30 animate-pulse-glow",
       },
       size: {
         default: "h-10 px-4 py-2",
