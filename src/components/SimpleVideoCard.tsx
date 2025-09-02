@@ -1,7 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Clock, User, PlayCircle, FileText } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from "@/components/ui/dropdown-menu";
+import { Clock, User, ExternalLink, MoreVertical, FileText, Download, Copy, Trash2, Eye, PlayCircle } from "lucide-react";
+import { exportSummary } from "@/lib/tauri";
+import { useToast } from "@/hooks/use-toast";
 
 interface SimpleVideoCardProps {
   title: string;
@@ -20,7 +24,18 @@ export const SimpleVideoCard = ({
   status,
   processingProgress = 0,
   summaryPreview,
+  url,
 }: SimpleVideoCardProps) => {
+  const { toast } = useToast();
+
+  const handleExport = async (format: 'markdown' | 'json' | 'txt') => {
+    await exportSummary('video-id', format);
+  };
+
+  const handleCopyUrl = () => {
+    navigator.clipboard.writeText(url);
+    toast({ title: "URL copied to clipboard" });
+  };
   const getStatusConfig = (status: string) => {
     switch (status) {
       case "completed":
@@ -77,10 +92,49 @@ export const SimpleVideoCard = ({
               </span>
             </div>
           </div>
-          <Badge className={`${statusConfig.color} px-3 py-1.5 text-xs font-semibold`}>
-            <span className="mr-1">{statusConfig.icon}</span>
-            {status.charAt(0).toUpperCase() + status.slice(1)}
-          </Badge>
+          
+          <div className="flex items-center space-x-2">
+            <Badge className={`${statusConfig.color} px-3 py-1.5 text-xs font-semibold`}>
+              <span className="mr-1">{statusConfig.icon}</span>
+              {status.charAt(0).toUpperCase() + status.slice(1)}
+            </Badge>
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <MoreVertical className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 gradient-card border-border/50">
+                <DropdownMenuItem onClick={handleCopyUrl}>
+                  <Copy className="h-4 w-4 mr-2" />
+                  Copy URL
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Eye className="h-4 w-4 mr-2" />
+                  View Summary
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => handleExport('markdown')}>
+                  <Download className="h-4 w-4 mr-2" />
+                  Export as Markdown
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleExport('json')}>
+                  <FileText className="h-4 w-4 mr-2" />
+                  Export as JSON
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem className="text-destructive">
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Delete
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
 
         {status === "processing" && (
